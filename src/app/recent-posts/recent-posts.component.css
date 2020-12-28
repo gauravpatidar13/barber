@@ -1,0 +1,66 @@
+.recent h1{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 35px;
+    text-transform: capitalize;
+}
+.immk{
+    position: relative;
+}
+.immk .tag{
+color:#fff;
+position: absolute;
+right: 30px;
+top: 30px;
+font-size: 14px;
+}
+.qw h4{
+    margin-left: 20px;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.qw p{
+    font-size: 16px;
+    margin-left: 20px;
+}
+.qw p span{
+    color:#f00;
+    font-size: 20px;
+    margin-left:5px;
+    cursor:pointer;
+}
+.qw .bt{
+display: flex;
+justify-content: space-between;
+}
+.dt{
+    display: flex;
+}
+.dt p{
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 5px;
+    color:gray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.bni{
+    display: flex;
+    justify-content: space-between;
+}
+.msg i{
+    font-size: 14px;
+    color:orangered;
+    margin-right: 5px;
+}
+.lov i{
+    margin-right: 5px;
+    font-size: 14px;
+    color:orangered;
+}
+.dt i{
+    color:brown;
+    font-size: 16px;
+}
