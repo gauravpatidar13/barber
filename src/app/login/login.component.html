@@ -1,0 +1,32 @@
+<div class="jumbotron wrapper">
+<div class="wr">
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
+        <div class="form-group">
+        <input type="text" class="form-control" #emailRef="ngModel" name="email" ngModel required pattern="^[a-zA-Z][a-zA-Z0-9]+@[a-zA-Z]+[.][a-zA-Z]+$" placeholder="Enter Email">
+        <div *ngIf="emailRef.errors && (emailRef.dirty || emailRef.touched)"
+        class="alert alert-danger">
+        <div [hidden]="!emailRef.errors.required">
+        Please enter your email address
+        </div>
+        <div [hidden]="!emailRef.errors.pattern">
+            Please enter a valid email address
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control" #passwordRef="ngModel" name="password" ngModel required minlength="4" placeholder="Enter Password">
+        <div *ngIf="passwordRef.errors && (passwordRef.dirty || passwordRef.touched)"
+        class="alert alert-danger">
+        <div [hidden]="!passwordRef.errors.required">
+        Please enter your password
+        </div>
+        <div [hidden]="!passwordRef.errors.minlength">
+            Please enter alleast 4 characters
+            </div>
+        </div>
+    </div>
+    <button type="submit" [disabled]="!myForm.form.valid" class="btn btn-warning btn-login">Login</button>
+    </form>
+    <label class="do-not-have-ac" routerLink="../register">Do not have an account, Register here</label>
+</div>
+</div>

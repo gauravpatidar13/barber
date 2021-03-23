@@ -1,40 +1,35 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { WhatWeDoComponent } from './what-we-do/what-we-do.component';
-import { DigitalServicesComponent } from './digital-services/digital-services.component';
-import { WhoWeAreComponent } from './who-we-are/who-we-are.component';
-import { ZeroComponent } from './zero/zero.component';
-import { TeamComponent } from './team/team.component';
-import { TestComponent } from './test/test.component';
-import { RestComponent } from './rest/rest.component';
-import { SayComponent } from './say/say.component';
-import { RecentPostsComponent } from './recent-posts/recent-posts.component';
-import { FooterComponent } from './footer/footer.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import {HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
+import {TokenInterceptorService} from './token-interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    WhatWeDoComponent,
-    DigitalServicesComponent,
-    WhoWeAreComponent,
-    ZeroComponent,
-    TeamComponent,
-    TestComponent,
-    RestComponent,
-    SayComponent,
-    RecentPostsComponent,
-    FooterComponent
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptorService,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
